@@ -42,7 +42,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v3
         with:
-          images: ${{ env.REGISTRY }}/apollo-codegen
+          images: ${{ env.REGISTRY }}/${{ github.repository }}/apollo-codegen
           labels: |
             org.opencontainers.image.title=apollo-codegen
             org.opencontainers.image.description=Fixes broken npm dependencies for `apollo client:codegen`
