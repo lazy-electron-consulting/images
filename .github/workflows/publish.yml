@@ -37,6 +37,12 @@ jobs:
         uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
         with:
           images: ${{ env.REGISTRY }}/apollo-codegen
+          labels: |
+            org.opencontainers.image.title=apollo-codegen
+            org.opencontainers.image.description=Fixes broken npm dependencies for `apollo client:codegen`
+            org.opencontainers.image.source=${{ github.server_url }}/${{ github.repository }}/apollo-codegen
+            org.opencontainers.image.url=${{ github.server_url }}/${{ github.repository }}/apollo-codegen
+
 
       - name: Build and push Docker image
         uses: docker/build-push-action@ad44023a93711e3deb337508980b4b5e9bcdc5dc
