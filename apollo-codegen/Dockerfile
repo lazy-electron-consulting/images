@@ -3,8 +3,11 @@ FROM node:${NODE_TAG}
 
 ARG APOLLO_VERSION=2.33.8
 ARG GRAPHQL_VERSION=15
+ARG USER=node
 
 WORKDIR /app
+RUN chown $USER /app
+USER $USER
 
 # reduce npm output
 ENV npm_config_audit=false \
